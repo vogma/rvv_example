@@ -11,7 +11,7 @@
     
     .globl vec_len_rvv
 vec_len_rvv:
-    vsetvli vl, n, e32
+    vsetvli vl, n, e32, m1, ta, ma
     vlseg3e32.v Xs, (pts) # loads interleaved Xs, Ys, Zs into 3 registers
     vfmul.vv lens, Xs, Xs
     vfmacc.vv lens, Ys, Ys
